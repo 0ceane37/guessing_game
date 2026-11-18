@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-FROM openjdk:26-rc-jdk-slim-trixie
+FROM openjdk:27-rc-jdk-slim-trixie
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8080
